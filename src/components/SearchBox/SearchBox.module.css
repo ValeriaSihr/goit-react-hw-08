@@ -1,0 +1,21 @@
+.searchbar {
+display: flex;
+flex-direction: column;
+gap: 16px;
+align-items: start;
+width: auto;
+    
+}
+
+.searchName {
+font-size: 20px;
+}
+
+.searchInput {
+    padding: 0 10px;
+    width: 375px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: transparent;
+}
