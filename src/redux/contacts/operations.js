@@ -5,39 +5,30 @@ export const fetchContacts = createAsyncThunk(
     "contacts/fetchAll",
     async (_, thunkAPI) => {
         try {
-            const response = await axios.get(
-                "https://66784bdb0bd45250561e328a.mockapi.io/Contacts"
-            );
-            return response.data;
+            const { data } = await axios.get("/contacts");
+            return data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }
     }
 );
-
 export const addContact = createAsyncThunk(
     "contacts/addContact",
-    async (contact, thunkAPI) => {
+    async ({ name, number }, thunkAPI) => {
         try {
-            const response = await axios.post(
-                "https://66784bdb0bd45250561e328a.mockapi.io/Contacts",
-                contact
-            );
-            return response.data;
+            const { data } = await axios.post("/contacts", { name, number });
+            return data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }
     }
 );
-
 export const deleteContact = createAsyncThunk(
     "contacts/deleteContact",
     async (contactId, thunkAPI) => {
         try {
-            await axios.delete(
-                `https://66784bdb0bd45250561e328a.mockapi.io/Contacts/${contactId}`
-            );
-            return contactId;
+            const { data } = await axios.delete(`/contacts/${contactId}`);
+            return data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }
