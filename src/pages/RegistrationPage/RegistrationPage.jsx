@@ -6,7 +6,7 @@ import css from "./RegistrationPage.module.css";
 export default function RegistrationPage() {
   return (
     <div className={css.registrationDiv}>
-      <PageTitle>Register your account</PageTitle>
+      <PageTitle className={css.pageTitle}>Account registration</PageTitle>
       <RegistrationForm/>
     </div>
   );

@@ -23,11 +23,11 @@ export default function ContactForm() {
       validationSchema={contactFormSchema}
       onSubmit={handleSubmit}
     >
-      <Form className={css.form} autoComplete="off">
-        <label className={css.label}>
+      <Form className={css.formikForm} autoComplete="off">
+        <label className={css.formikLabel}>
           Name
           <Field
-            className={css.input}
+            className={css.formikField}
             type="text"
             name="name"
             placeholder="Name Surname"
@@ -44,7 +44,7 @@ export default function ContactForm() {
           />
         </label>
         <ErrorMessage className={css.error} name="number" component="span" />
-        <button className={css.btn} type="submit">
+        <button className={css.formikBtn} type="submit">
           Add contact
         </button>
       </Form>

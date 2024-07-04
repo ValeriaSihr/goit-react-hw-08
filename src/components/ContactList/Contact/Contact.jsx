@@ -9,20 +9,20 @@ export const Contact = ({ id, name, number }) => {
   const handleDelete = () => dispatch(deleteContact(id));
 
   return (
-    <li className={css.contactLi}>
+    <li className={css.contactItem}>
       <div>
-        <h3 className={css.name}>
+        <h3>
           <BsFillPersonFill size={30} color="black" />
           {name}
         </h3>
-        <p className={css.number}>
+        <p>
           <BsFillTelephoneFill size={30} color="black" />
           {number}
         </p>
       </div>
 
-      <button className={css.btn} onClick={handleDelete} type="submit">
-        Delete
+      <button className={css.delContact} onClick={handleDelete} type="submit">
+        🗑️
       </button>
     </li>
   );

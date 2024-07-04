@@ -60,15 +60,15 @@ export const refreshUser = createAsyncThunk(
         const persistedToken = state.auth.token;
 
         if (persistedToken === null) {
-            return thunkAPI.rejectWithValue("Token not found");
+            return thunkAPI.rejectWithValue("Not found");
         }
         token.setAuth(persistedToken);
         try {
             const { data } = await axios.get("/users/current");
             return data;
         } catch (error) {
-            toast.error("User is not found!", {
-                icon: "🤷‍♂️",
+            toast.error("User doesn`t exist!", {
+                icon: "🙈",
             });
             return thunkAPI.rejectWithValue(error.code);
         }

@@ -10,11 +10,11 @@ export default function HomePage() {
   return (
     <div className={css.homePageDiv}>
       {isLoggedIn ? (
-        <PageTitle>All your contacts in one place!</PageTitle>
+        <PageTitle>Contacts</PageTitle>
       ) : (
         <>
           <PageTitle>To get started, please log in!</PageTitle>
-          <p>
+          <p className={css.register}>
             or <Link to="/register">register</Link>
           </p>
         </>
